@@ -1,33 +1,38 @@
 Project Management Optimizer
-A small Streamlit app that schedules tasks (jobs) to maximize total profit using a greedy job sequencing algorithm.
 
-Features
-Upload a CSV of tasks or edit the sample table in the UI.
-Computes an optimized set of jobs and the total profit.
-Visualizes the scheduled jobs and provides a downloadable CSV of the result.
+A simple and interactive Streamlit application that schedules tasks using the Greedy Job Sequencing Algorithm to maximize total profit.
+Upload your own CSV file or modify the sample table in the app, visualize scheduled tasks, and download the optimized output.
 
-Repository layout
-app.py — Streamlit application (entrypoint / UI).
-job_scheduling.py — Greedy job sequencing algorithm used by the app.
-requirements.txt — Python dependencies.
-Prerequisites
+🚀 Features
+
+📤 Upload a CSV of jobs or edit a sample dataset directly in the UI
+⚙️ Greedy Job Sequencing to compute the maximum profit schedule
+📊 Visual timeline and profit chart
+📄 Display of the optimized job list (id, deadline, profit)
+💰 Total profit shown clearly
+⬇️ Download the optimized schedule as optimized_schedule.csv
+
+✅ Prerequisites
 Python 3.8+
-pip
+pip (Python package manager)
 
-Run the app
-From the project root:
+▶️ How to Run
+From the project root directory, run:
 streamlit run app.py
 
-Streamlit will print a local URL (e.g., http://localhost:8501) — open it in your browser.
-Expected input CSV format
-The uploaded CSV must include these columns (headers are case-sensitive):
+📤 Output & UI Behavior
 
-id — unique job identifier (string)
-deadline — integer deadline (slot number)
-profit — integer profit/value for completing the job
+After uploading or editing data:
+✔️ Application calculates an optimized schedule
+✔️ Shows selected jobs with id, deadline, and profit
+✔️ Displays total profit
+✔️ Provides: Job timeline visualization, Profit chart
+✔️ Allows downloading: optimized_schedule.csv
 
-Output / UI behavior
-Table of scheduled jobs (id, deadline, profit).
-Total profit displayed.
-Downloadable CSV (optimized_schedule.csv) of the scheduled jobs.
-Timeline visualization and profit chart.
+🧠 Algorithm Used
+
+The app uses the Greedy Job Scheduling Algorithm:
+Sort jobs by profit (highest first)
+For each job, schedule it in the latest available slot before its deadline
+Maximize the total profit
+Implementation is in job_scheduling.py.
